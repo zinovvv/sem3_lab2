@@ -12,8 +12,8 @@
 MusicLibrary* InitMusicLibrary() {
     MusicLibrary* library_ptr = (MusicLibrary*)malloc(sizeof(MusicLibrary));
     if (!library_ptr) {
-        fputs("Ошибка", stderr);
-        return NULL;
+        fprintf(stderr, "Неудачная аллокация памяти.\n");
+        exit(1);
     }
 
     library_ptr->num_artists = 0;
@@ -25,8 +25,8 @@ MusicLibrary* InitMusicLibrary() {
 MusicLibrary* InitPlaylist(const char* title, MusicLibrary* ml, int num_tracks, int num_albums) {
     Playlist* playlist_ptr = (Playlist*)malloc(sizeof(Playlist));
     if (!playlist_ptr) {
-        fputs("Ошибка", stderr);
-        return NULL;
+        fprintf(stderr, "Неудачная аллокация памяти.\n");
+        exit(1);
     }
 
     playlist_ptr->title = _strdup(title);
@@ -39,8 +39,8 @@ MusicLibrary* InitPlaylist(const char* title, MusicLibrary* ml, int num_tracks, 
 void OutputPlaylistTracks(MusicLibrary* ml)
 {
     if (!ml) {
-        puts("Invalid track");
-        return;
+        fprintf(stderr, "Ошибка.\n");
+        exit(1);
     }
     printf("Название плейлиста: %s\n\n", ml->all_playlists[ml->num_playlists - 1]->title);
     printf("Кол-во треков в плейлисте: %d\n\n", ml->all_playlists[ml->num_playlists - 1]->num_tracks);

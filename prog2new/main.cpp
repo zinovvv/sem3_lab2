@@ -18,8 +18,7 @@ int main() {
     printf("Инициализация и заполнение плейлиста\n");
     ml = InitPlaylist("Любимые треки", ml, 3, 2);
     Track tracks[3] = { {"Кукушка", "Виктор Цой", 400, 1986, "рок"}, {"Метель", "Би-2", 345, 1998, "рок"}, {"Лето в городе", "Иван Дорн", 328, 2012, "поп"} };
-    Track* tracks_ptr = tracks;
-    ml = InitPlaylistTrack(tracks_ptr, ml, 3);
+    ml = InitPlaylistTrack(tracks, ml, 3);
     OutputPlaylistTracks(ml);
     ml = DeletePlaylistTrack(ml);
     //ml = TrackInputPlaylist(ml);
@@ -36,8 +35,7 @@ int main() {
     {{"Ариведерчи", "Земфира", 431, 2005, "рок"},
     {"Бесконечность", "Земфира", 344, 2005, "рок"},
     {"Мачо", "Земфира", 315, 2005, "рок"}}}};
-    Album* albums_ptr = albums;
-    ml = InitPlaylistAlbum(albums_ptr,ml,2);
+    ml = InitPlaylistAlbum(albums,ml,2);
     OutputPlaylistAlbums(ml);
     ml = DeletePlaylistAlbum(ml);
     //ml = AlbumInputPlaylist(ml);
@@ -63,8 +61,7 @@ int main() {
     {"Канкан", "ЛСП", 258, 2015, "рэп"},
     {"Ползать", "ЛСП", 258, 2015, "рэп"},
     {"Деньги не проблема", "ЛСП", 258, 2015, "рэп"}}} };
-    Album* albums_lsp_ptr = albums_lsp;
-    ml = InitArtist(ml, "ЛСП", 2, albums_lsp_ptr);
+    ml = InitArtist(ml, "ЛСП", 2, albums_lsp);
     OutputArtist(ml);
     ml = DeleteArtistAlbum(ml);
     OutputArtist(ml);
