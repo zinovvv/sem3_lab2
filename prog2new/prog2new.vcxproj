@@ -128,9 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Album.cpp" />
-    <ClCompile Include="Artist.cpp" />
     <ClCompile Include="MusicLibrary.cpp" />
-    <ClCompile Include="Playlist.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Track.cpp" />
   </ItemGroup>

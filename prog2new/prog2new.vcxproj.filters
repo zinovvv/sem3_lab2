@@ -24,12 +24,6 @@
     <ClCompile Include="Album.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Artist.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Playlist.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="MusicLibrary.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>

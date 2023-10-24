@@ -71,7 +71,7 @@ void OutputPlaylistAlbums(MusicLibrary* ml)
     }
 }
 
-MusicLibrary* InitPlaylistTrack(Track* tracks, MusicLibrary* ml, int num_tracks) {
+MusicLibrary* SetPlaylistTrack(Track* tracks, MusicLibrary* ml, int num_tracks) {
     for (int i = 0; i < num_tracks; i++)
     {
         ml->all_playlists[ml->num_playlists]->tracks[i] = tracks[i];
@@ -80,14 +80,14 @@ MusicLibrary* InitPlaylistTrack(Track* tracks, MusicLibrary* ml, int num_tracks)
     return ml;
 }
 
-MusicLibrary* InitPlaylistAlbum(Album* albums, MusicLibrary* ml, int num_albums) {
+MusicLibrary* SetPlaylistAlbum(Album* albums, MusicLibrary* ml, int num_albums) {
     for (int i = 0; i < num_albums; i++) {
         ml->all_playlists[ml->num_playlists - 1]->albums[i] = albums[i];
     }
     return ml;
 }
 
-MusicLibrary* InputPlaylistTrack(MusicLibrary* ml) {
+MusicLibrary* AddPlaylistTrack(MusicLibrary* ml) {
     do
     {
         char* title, * artist, * genre;
@@ -131,7 +131,7 @@ MusicLibrary* InputPlaylistTrack(MusicLibrary* ml) {
     return ml;
 }
 
-MusicLibrary* InputPlaylistAlbum(MusicLibrary* ml) {
+MusicLibrary* AddPlaylistAlbum(MusicLibrary* ml) {
     do
     {
         Track tracks[MAX_ALBUM_TRACKS];
@@ -177,6 +177,7 @@ MusicLibrary* DeletePlaylistTrack(MusicLibrary* ml) {
     printf("\n\n¬ведите номер трека который хотите удалить: ");
     int number;
     scanf("%d", &number);
+    while (getchar() != '\n');
     for (int i = number - 1; i < ml->all_playlists[ml->num_playlists - 1]->num_tracks - 1; i++) {
         ml->all_playlists[ml->num_playlists - 1]->tracks[i] = ml->all_playlists[ml->num_playlists - 1]->tracks[i + 1];
     }
@@ -188,6 +189,7 @@ MusicLibrary* DeletePlaylistAlbum(MusicLibrary* ml) {
     printf("\n\n¬ведите номер альбома который хотите удалить: ");
     int number;
     scanf("%d", &number);
+    while (getchar() != '\n');
     for (int i = number - 1; i < ml->all_playlists[ml->num_playlists - 1]->num_albums - 1; i++) {
         ml->all_playlists[ml->num_playlists - 1]->albums[i] = ml->all_playlists[ml->num_playlists - 1]->albums[i + 1];
     }

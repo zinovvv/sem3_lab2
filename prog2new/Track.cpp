@@ -4,9 +4,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <windows.h>
-#include <conio.h>
-
 #include "Track.h"
 
 Track InitTrack(const char* title, const char* artist, int duration, int year, const char* genre) {
