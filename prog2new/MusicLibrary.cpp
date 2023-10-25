@@ -47,7 +47,7 @@ void OutputPlaylistTracks(MusicLibrary* ml)
     puts("Треки:\n");
     for (int i = 0; i < ml->all_playlists[ml->num_playlists - 1]->num_tracks; i++)
     {
-        printf("Трек: %s - %s\t", ml->all_playlists[ml->num_playlists - 1]->tracks[i].title, ml->all_playlists[ml->num_playlists - 1]->tracks[i].artist);
+        printf("Трек №%d: %s - %s\t", i+1,ml->all_playlists[ml->num_playlists - 1]->tracks[i].title, ml->all_playlists[ml->num_playlists - 1]->tracks[i].artist);
         printf("Длительность: %d с, Год выхода: %d\t", ml->all_playlists[ml->num_playlists - 1]->tracks[i].duration, ml->all_playlists[ml->num_playlists - 1]->tracks[i].year);
         printf("Жанр: %s\n\n", ml->all_playlists[ml->num_playlists - 1]->tracks[i].genre);
     }
@@ -59,7 +59,7 @@ void OutputPlaylistAlbums(MusicLibrary* ml)
     for (int j = 0; j < ml->all_playlists[ml->num_playlists - 1]->num_albums; j++)
     {
         puts("\nИнформация об альбоме:\n");
-        printf("Альбом: %s - %s\t", ml->all_playlists[ml->num_playlists - 1]->albums[j].title, ml->all_playlists[ml->num_playlists - 1]->albums[j].artist);
+        printf("Альбом №%d: %s - %s\t",j+1, ml->all_playlists[ml->num_playlists - 1]->albums[j].title, ml->all_playlists[ml->num_playlists - 1]->albums[j].artist);
         printf("Год выхода: %d\tКоличество треков: %d", ml->all_playlists[ml->num_playlists - 1]->albums[j].year, ml->all_playlists[ml->num_playlists - 1]->albums[j].num_tracks);
         printf("\n\nТреки:\n");
         for (int k = 0; k < ml->all_playlists[ml->num_playlists - 1]->albums[j].num_tracks; k++)

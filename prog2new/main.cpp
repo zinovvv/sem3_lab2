@@ -41,8 +41,8 @@ int main() {
     OutputPlaylistTracks(ml);
 
     //Добавление нового трека в плейлист
-    //ml = AddPlaylistTrack(ml);
-    //OutputPlaylistTracks(ml);
+    ml = AddPlaylistTrack(ml);
+    OutputPlaylistTracks(ml);
 
     printf("Создание альбома и добавление в плейлист");
 
